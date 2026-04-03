@@ -1,0 +1,112 @@
+{
+  "name": "genbusapp",
+  "displayName": "GenBusApp",
+  "description": "Generate production-ready business apps from JSON inside VS Code, then open, copy, or extract the generated source package in one flow.",
+  "version": "1.0.0",
+  "publisher": "genbusapp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/genbusapp/genbusapp-vscode-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/genbusapp/genbusapp-vscode-extension/issues"
+  },
+  "homepage": "https://github.com/genbusapp/genbusapp-vscode-extension#readme",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "json",
+    "code-generator",
+    "nextjs",
+    "react",
+    "mongodb",
+    "business-app",
+    "developer-tools"
+  ],
+  "activationEvents": [
+    "onCommand:genbusapp.uploadJson",
+    "onLanguage:json"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "genbusapp.uploadJson",
+        "title": "GenBusApp: Generate React NextJS App From JSON"
+      },
+      {
+        "command": "genbusapp.uploadJsonQuick",
+        "title": "GenBusApp: Generate React NextJS App From JSON (Quick Action)"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "genbusapp.uploadJson",
+          "when": "genbusapp.hasValidJson"
+        },
+        {
+          "command": "genbusapp.uploadJsonQuick",
+          "when": "genbusapp.hasValidJson"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "genbusapp.uploadJson",
+          "when": "genbusapp.hasValidJson",
+          "group": "navigation@50"
+        },
+        {
+          "command": "genbusapp.uploadJsonQuick",
+          "when": "genbusapp.hasValidJson",
+          "group": "navigation@60"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "GenBusApp configuration",
+      "properties": {
+        "genbusapp.apiUrl": {
+          "type": "string",
+          "default": "https://www.j2code.app/api/j2code/reactnextjs-mongodb",
+          "description": "API endpoint used to upload JSON and generate the zip package."
+        },
+        "genbusapp.defaultDownloadAction": {
+          "type": "string",
+          "enum": ["prompt", "open", "copy", "downloadExtract", "downloadExtractNamed"],
+          "default": "prompt",
+          "description": "Default action after uploading JSON. 'prompt' shows the webview panel, otherwise runs the selected action automatically."
+        },
+        "genbusapp.namedDownloadFolderName": {
+          "type": "string",
+          "default": "${fileName}",
+          "description": "When using downloadExtractNamed, folder name in workspace. ${fileName} is replaced with active editor file name."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "dev": "pnpm run watch",
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "package": "vsce package --no-dependencies",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.8",
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.88.0",
+    "@vscode/vsce": "^2.26.1",
+    "eslint": "^9.2.0",
+    "typescript": "^5.5.4"
+  }
+}
