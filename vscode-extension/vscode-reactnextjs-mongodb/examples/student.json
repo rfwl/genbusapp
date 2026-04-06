@@ -1,0 +1,29 @@
+{
+  "Code": 10176,
+  "Title": "Ms",
+  "FirstName": "Jeremi",
+  "LastName": "Harris",
+  "DOB": "2010-11-25",
+  "Gender": "F",
+  "Active": true,
+  "Address": {
+    "AddressLine1": "Legal House",
+    "AddressLine2": "123 Floradel Street, Chippendale",
+    "Suburb": "Tenlipu",
+    "State": "ABC",
+    "Postcode": "1234",
+    "Country": "ABC",
+    "j2codeConfig": {
+      "multiWordsName": "student, address, record"
+    }
+  },
+  "Contact": {
+    "Mobile": "012345678",
+    "Phone": "12345678",
+    "Email": "abcdef@abcdef.com",
+    "Web": "abcdef.com"
+  },
+  "j2codeConfig": {
+    "multiWordsName": "student, record"
+  }
+}
