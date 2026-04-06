@@ -1,23 +1,16 @@
 # GenBusApp VS Code Extensions
 
-This repository contains the GenBusApp VS Code extension packages organized by framework and backend target.
+This repository contains the remaining GenBusApp VS Code extension package.
 
-## Packages
+## Package
 
-- `vscode-extension/vscode-reactnextjs-mongodb`: React/Next.js + MongoDB app generator
 - `vscode-extension/vscode-angular-firestore`: Angular + Firestore app generator
 
-Each package is a standalone VS Code extension with its own `package.json`, lockfile, TypeScript config, source, examples, and packaged `.vsix` artifact.
+The package is a standalone VS Code extension with its own `package.json`, TypeScript config, source, examples, and packaged `.vsix` artifact.
 
 ## Development
 
-Run package commands from the extension directory you want to work on.
-
-```bash
-cd vscode-extension/vscode-reactnextjs-mongodb
-pnpm install
-pnpm run compile
-```
+Run package commands from the extension directory.
 
 ```bash
 cd vscode-extension/vscode-angular-firestore
