@@ -30,7 +30,9 @@
     "developer-tools"
   ],
   "activationEvents": [
-    "onLanguage:json"
+    "onLanguage:json",
+    "onCommand:genbusapp.uploadJson",
+    "onCommand:genbusapp.uploadJsonQuick"
   ],
   "main": "./dist/extension.js",
   "contributes": {
