@@ -1,7 +1,6 @@
 import * as vscode from "vscode";
 import * as path from "path";
 import { promises as fs } from "fs";
-import AdmZip from "adm-zip";
 
 const CONFIG_SECTION = "genbusapp";
 const CONTEXT_KEY_HAS_VALID_JSON = "genbusapp.hasValidJson";
@@ -12,6 +11,29 @@ const RESPONSE_SUFFIX = "You can download the .zip file from the above link.";
 
 type DownloadAction = "open" | "copy" | "downloadExtract" | "downloadExtractNamed";
 type DownloadActionOrPrompt = DownloadAction | "prompt";
+type ZipEntryLike = {
+  entryName: string;
+  getData(): Buffer;
+  isDirectory: boolean;
+};
+
+type AdmZipInstance = {
+  getEntries(): ZipEntryLike[];
+};
+
+type AdmZipConstructor = new (input: Buffer) => AdmZipInstance;
+
+function loadAdmZip(): AdmZipConstructor {
+  try {
+    // Load lazily so a packaging mistake cannot block extension activation.
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    return require("../vendor/adm-zip/adm-zip") as AdmZipConstructor;
+  } catch {
+    throw new Error(
+      "Zip extraction is unavailable because the bundled zip library could not be loaded from the extension package."
+    );
+  }
+}
 
 function getApiUrl(): string {
   const configuration = vscode.workspace.getConfiguration(CONFIG_SECTION);
@@ -526,6 +548,7 @@ async function downloadAndExtractZipIntoWorkspace(zipUrl: string): Promise<void>
   }
 
   const buffer = Buffer.from(await res.arrayBuffer());
+  const AdmZip = loadAdmZip();
   const zip = new AdmZip(buffer);
   const entries = zip.getEntries();
 
@@ -564,6 +587,7 @@ async function downloadAndExtractZipIntoNamedFolder(zipUrl: string, folderName?:
   }
 
   const buffer = Buffer.from(await res.arrayBuffer());
+  const AdmZip = loadAdmZip();
   const zip = new AdmZip(buffer);
   const entries = zip.getEntries();
 
@@ -577,6 +601,4 @@ async function downloadAndExtractZipIntoNamedFolder(zipUrl: string, folderName?:
 }
 
 // #endregion
-
-
 

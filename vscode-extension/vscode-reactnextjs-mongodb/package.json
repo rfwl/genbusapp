@@ -2,7 +2,7 @@
   "name": "genbusapp-vscode-reactnextjs-mongodb",
   "displayName": "GenBusApp - React NextJS MongoDB App Generator",
   "description": "Generate production-ready business apps maintaining business record lists simply from a JSON sample business record inside VS Code instantly",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "publisher": "genbusapp",
   "repository": {
     "type": "git",
@@ -97,6 +97,7 @@
     "dev": "pnpm run watch",
     "compile": "tsc -p .",
     "watch": "tsc -w -p .",
+    "vscode:prepublish": "pnpm run compile",
     "package": "vsce package --no-dependencies",
     "lint": "eslint ."
   },
