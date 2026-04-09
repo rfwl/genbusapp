@@ -1,5 +1,6 @@
 **/.vscode/**
 **/node_modules/**
+!node_modules/adm-zip/**
 **/.pnpm-store/**
 **/.cursor/**
 src/**
@@ -8,4 +9,3 @@ tsconfig.json
 eslint.config.*
 pnpm-lock.yaml
 .DS_Store
-

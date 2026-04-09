@@ -30,7 +30,9 @@
     "developer-tools"
   ],
   "activationEvents": [
-    "onLanguage:json"
+    "onLanguage:json",
+    "onCommand:genbusapp.uploadJson",
+    "onCommand:genbusapp.uploadJsonQuick"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -95,6 +97,7 @@
     "dev": "pnpm run watch",
     "compile": "tsc -p .",
     "watch": "tsc -w -p .",
+    "vscode:prepublish": "pnpm run compile",
     "package": "vsce package --no-dependencies",
     "lint": "eslint ."
   },

@@ -1,17 +1,39 @@
 import * as vscode from "vscode";
 import * as path from "path";
 import { promises as fs } from "fs";
-import AdmZip from "adm-zip";
 
 const CONFIG_SECTION = "genbusapp";
 const CONTEXT_KEY_HAS_VALID_JSON = "genbusapp.hasValidJson";
 
-const DEFAULT_API_URL = "https://www.j2code.app/api/j2code/reactnextjs-mongodb";
+const DEFAULT_API_URL = "https://www.j2code.app/api/j2code/angular-firestore";
 const RESPONSE_PREFIX = "Successfully uploaded the source code .zip file to Vercel Blob at: ";
 const RESPONSE_SUFFIX = "You can download the .zip file from the above link.";
 
 type DownloadAction = "open" | "copy" | "downloadExtract" | "downloadExtractNamed";
 type DownloadActionOrPrompt = DownloadAction | "prompt";
+type ZipEntryLike = {
+  entryName: string;
+  getData(): Buffer;
+  isDirectory: boolean;
+};
+
+type AdmZipInstance = {
+  getEntries(): ZipEntryLike[];
+};
+
+type AdmZipConstructor = new (input: Buffer) => AdmZipInstance;
+
+function loadAdmZip(): AdmZipConstructor {
+  try {
+    // Load lazily so a packaging mistake cannot block extension activation.
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    return require("../vendor/adm-zip/adm-zip") as AdmZipConstructor;
+  } catch {
+    throw new Error(
+      "Zip extraction is unavailable because the bundled zip library could not be loaded from the extension package."
+    );
+  }
+}
 
 function getApiUrl(): string {
   const configuration = vscode.workspace.getConfiguration(CONFIG_SECTION);
@@ -36,40 +58,6 @@ function getNamedFolderName(defaultFileName: string): string {
   }
   return folderName || defaultFileName;
 }
-/*
-activate(context)
-├─ updateContextDebounced (debounced, runs on editor/text changes)
-│  └─ setHasValidJsonContextFromActiveEditor()
-│      └─ tryParseJson(...)
-└─ setHasValidJsonContextFromActiveEditor()  // initial call
-    └─ tryParseJson(...)
-
-registerCommand("genbusapp.uploadJson")
-└─ command callback async
-   ├─ activeTextEditor ? ...
-   ├─ jsonText = editor.document.getText().trim()
-   ├─ parsed = tryParseJson(jsonText)
-   ├─ postJsonString(jsonText, controller.signal)
-   │   └─ fetch(API_URL, {...})
-   ├─ extractUrlFromTextResponse(progressResultText)
-   └─ showDownloadActionPanel(url)
-       └─ createWebviewPanel(...)
-       └─ (user selects action)
-          ├─ open -> vscode.env.openExternal(vscode.Uri.parse(url))
-          ├─ copy -> vscode.env.clipboard.writeText(url)
-          ├─ downloadExtract -> downloadAndExtractZipIntoWorkspace(url)
-          │   ├─ fetch(url)
-          │   ├─ AdmZip(buffer)
-          │   ├─ unzip entries -> safeJoin(...)
-          │   └─ fs.writeFile(...)
-          └─ downloadExtractNamed -> downloadAndExtractZipIntoNamedFolder(url)
-              ├─ get filename from active editor
-              ├─ fetch(url)
-              ├─ AdmZip(buffer)
-              ├─ unzip entries -> safeJoin(...)
-              └─ fs.writeFile(...)
-*/
-// #region Activate and Deactivate
 
 export function activate(context: vscode.ExtensionContext) {
   const updateContextDebounced = (() => {
@@ -119,10 +107,10 @@ export function activate(context: vscode.ExtensionContext) {
       }
     );
 
-    console.log("Response text:", progressResultText);
+    //console.log("Response text:", progressResultText);
 
     const url = extractUrlFromTextResponse(progressResultText);
-    console.log("[GenBusApp] extractUrlFromTextResponse.url =", url);
+    //console.log("[GenBusApp] extractUrlFromTextResponse.url =", url);
 
     if (!url) {
       await vscode.window.showErrorMessage("API response did not contain a downloadable zip URL.", {
@@ -211,14 +199,14 @@ async function postJsonString(apiUrl: string, jsonText: string, signal: AbortSig
 
 function extractUrlFromTextResponse(text: string): string | undefined {
   const start = text.indexOf(RESPONSE_PREFIX);
-  console.log("[GenBusApp] extractUrlFromTextResponse.start =", start);
+  //console.log("[GenBusApp] extractUrlFromTextResponse.start =", start);
 
   let urlText: string | undefined;
 
   if (start !== -1) {
     const afterPrefix = start + RESPONSE_PREFIX.length;
     const end = text.indexOf(RESPONSE_SUFFIX, afterPrefix);
-    console.log("[GenBusApp] extractUrlFromTextResponse.end =", end);
+    //console.log("[GenBusApp] extractUrlFromTextResponse.end =", end);
     if (end !== -1) {
       urlText = text.slice(afterPrefix, end).trim();
     }
@@ -227,10 +215,10 @@ function extractUrlFromTextResponse(text: string): string | undefined {
   if (!urlText) {
     const urlMatch = text.match(/https?:\/\/[\w\-.:@%\/?=&#+~]+/i);
     urlText = urlMatch?.[0];
-    console.log("[GenBusApp] extractUrlFromTextResponse.fallback =", urlText);
+    //console.log("[GenBusApp] extractUrlFromTextResponse.fallback =", urlText);
   }
 
-  console.log("[GenBusApp] extractUrlFromTextResponse.urlText =", urlText);
+  //console.log("[GenBusApp] extractUrlFromTextResponse.urlText =", urlText);
 
   if (!urlText) return undefined;
 
@@ -526,6 +514,7 @@ async function downloadAndExtractZipIntoWorkspace(zipUrl: string): Promise<void>
   }
 
   const buffer = Buffer.from(await res.arrayBuffer());
+  const AdmZip = loadAdmZip();
   const zip = new AdmZip(buffer);
   const entries = zip.getEntries();
 
@@ -564,6 +553,7 @@ async function downloadAndExtractZipIntoNamedFolder(zipUrl: string, folderName?:
   }
 
   const buffer = Buffer.from(await res.arrayBuffer());
+  const AdmZip = loadAdmZip();
   const zip = new AdmZip(buffer);
   const entries = zip.getEntries();
 
@@ -577,6 +567,4 @@ async function downloadAndExtractZipIntoNamedFolder(zipUrl: string, folderName?:
 }
 
 // #endregion
-
-
 
