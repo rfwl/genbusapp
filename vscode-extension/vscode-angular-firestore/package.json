@@ -2,7 +2,7 @@
   "name": "genbusapp-vscode-angular-firestore",
   "displayName": "GenBusApp - Angular Firestore App Generator",
   "description": "Generate production-ready business apps maintaining business record lists simply from a JSON sample business record inside VS Code instantly",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "publisher": "genbusapp",
   "repository": {
     "type": "git",
@@ -31,40 +31,40 @@
   ],
   "activationEvents": [
     "onLanguage:json",
-    "onCommand:genbusapp.uploadJson",
-    "onCommand:genbusapp.uploadJsonQuick"
+    "onCommand:genbusapp.uploadJson.angular.firestore",
+    "onCommand:genbusapp.uploadJsonQuick.angular.firestore"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "genbusapp.uploadJson",
+        "command": "genbusapp.uploadJson.angular.firestore",
         "title": "GenBusApp: Generate Angular Firestore App From JSON"
       },
       {
-        "command": "genbusapp.uploadJsonQuick",
+        "command": "genbusapp.uploadJsonQuick.angular.firestore",
         "title": "GenBusApp: Generate Angular Firestore App From JSON (Quick Action)"
       }
     ],
     "menus": {
       "commandPalette": [
         {
-          "command": "genbusapp.uploadJson",
+          "command": "genbusapp.uploadJson.angular.firestore",
           "when": "genbusapp.hasValidJson"
         },
         {
-          "command": "genbusapp.uploadJsonQuick",
+          "command": "genbusapp.uploadJsonQuick.angular.firestore",
           "when": "genbusapp.hasValidJson"
         }
       ],
       "editor/context": [
         {
-          "command": "genbusapp.uploadJson",
+          "command": "genbusapp.uploadJson.angular.firestore",
           "when": "genbusapp.hasValidJson",
           "group": "navigation@50"
         },
         {
-          "command": "genbusapp.uploadJsonQuick",
+          "command": "genbusapp.uploadJsonQuick.angular.firestore",
           "when": "genbusapp.hasValidJson",
           "group": "navigation@60"
         }
@@ -74,18 +74,18 @@
       "type": "object",
       "title": "GenBusApp configuration",
       "properties": {
-        "genbusapp.apiUrl": {
+        "genbusapp.apiUrl.angular.firestore": {
           "type": "string",
           "default": "https://www.j2code.app/api/j2code/angular-firestore",
           "description": "API endpoint used to upload JSON and generate the zip package."
         },
-        "genbusapp.defaultDownloadAction": {
+        "genbusapp.defaultDownloadAction.angular.firestore": {
           "type": "string",
           "enum": ["prompt", "open", "copy", "downloadExtract", "downloadExtractNamed"],
           "default": "prompt",
           "description": "Default action after uploading JSON. 'prompt' shows the webview panel, otherwise runs the selected action automatically."
         },
-        "genbusapp.namedDownloadFolderName": {
+        "genbusapp.namedDownloadFolderName.angular.firestore": {
           "type": "string",
           "default": "${fileName}",
           "description": "When using downloadExtractNamed, folder name in workspace. ${fileName} is replaced with active editor file name."
