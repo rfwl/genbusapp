@@ -78,9 +78,9 @@ This function handles nested objects and arrays at any depth, creating comprehen
 
 The extension contributes these VS Code settings:
 
-- `genbusapp.apiUrl.angular.firestore"`: API endpoint used to upload JSON and generate the zip package
-- `genbusapp.defaultDownloadAction.angular.firestore"`: default post-upload action: `prompt`, `open`, `copy`, `downloadExtract`, or `downloadExtractNamed`
-- `genbusapp.namedDownloadFolderName.angular.firestore"`: folder naming pattern for `downloadExtractNamed`; `${fileName}` resolves to the active JSON file name
+- `genbusapp.apiUrl_angular_firestore"`: API endpoint used to upload JSON and generate the zip package
+- `genbusapp.defaultDownloadAction_angular_firestore"`: default post-upload action: `prompt`, `open`, `copy`, `downloadExtract`, or `downloadExtractNamed`
+- `genbusapp.namedDownloadFolderName_angular_firestore"`: folder naming pattern for `downloadExtractNamed`; `${fileName}` resolves to the active JSON file name
 
 After generating the app, update the project's `.env.local` file with your own Firestore account details and database name before running it locally.
 
@@ -93,9 +93,9 @@ After generating the app, update the project's `.env.local` file with your own F
 ## Extension Metadata
 
 - Extension ID: `genbusapp-vscode-angular-firestore`
-- Display name: `GenBusApp - Angular Firestore App Generator`
+- Display name: `GenBusApp Angular Firestore App Generator`
 - Publisher: `genbusapp`
-- Current version: `1.0.1`
+- Current version: `1.0.2`
 
 ## Developer Setup
 

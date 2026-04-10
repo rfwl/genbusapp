@@ -37,13 +37,13 @@ function loadAdmZip(): AdmZipConstructor {
 
 function getApiUrl(): string {
   const configuration = vscode.workspace.getConfiguration(CONFIG_SECTION);
-  const apiUrl = configuration.get<string>("apiUrl.angular.firestore")?.trim();
+  const apiUrl = configuration.get<string>("apiUrl_angular_firestore")?.trim();
   return apiUrl && apiUrl.length > 0 ? apiUrl : DEFAULT_API_URL;
 }
 
 function getDefaultDownloadAction(): DownloadActionOrPrompt {
   const configuration = vscode.workspace.getConfiguration(CONFIG_SECTION);
-  const action = configuration.get<string>("defaultDownloadAction.angular.firestore", "prompt");
+  const action = configuration.get<string>("defaultDownloadAction_angular_firestore", "prompt");
   if (["prompt", "open", "copy", "downloadExtract", "downloadExtractNamed"].includes(action)) {
     return action as DownloadActionOrPrompt;
   }
@@ -52,7 +52,7 @@ function getDefaultDownloadAction(): DownloadActionOrPrompt {
 
 function getNamedFolderName(defaultFileName: string): string {
   const configuration = vscode.workspace.getConfiguration(CONFIG_SECTION);
-  let folderName = configuration.get<string>("namedDownloadFolderName.angular.firestore", "${fileName}");
+  let folderName = configuration.get<string>("namedDownloadFolderName_angular_firestore", "${fileName}");
   if (folderName.includes("${fileName}")) {
     folderName = folderName.replaceAll("${fileName}", defaultFileName);
   }
