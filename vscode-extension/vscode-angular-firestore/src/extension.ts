@@ -143,8 +143,8 @@ export function activate(context: vscode.ExtensionContext) {
   };
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("genbusapp.uploadJson", () => uploadJsonCommand(false)),
-    vscode.commands.registerCommand("genbusapp.uploadJsonQuick", () => uploadJsonCommand(true))
+    vscode.commands.registerCommand("genbusapp.uploadJson_angular_firestore", () => uploadJsonCommand(false)),
+    vscode.commands.registerCommand("genbusapp.uploadJsonQuick_angular_firestore", () => uploadJsonCommand(true))
   );
 }
 
