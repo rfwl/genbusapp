@@ -1,4 +1,4 @@
-# GenBusApp - Angular Firestore App Generator
+# GenBusApp Angular Firestore App Generator
 
 [![Version](https://img.shields.io/badge/version-1.0.1-0f766e.svg)](https://marketplace.visualstudio.com/)
 [![VS Code](https://img.shields.io/badge/VS%20Code-1.88.0+-2563eb.svg)](https://code.visualstudio.com/)

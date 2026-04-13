@@ -126,7 +126,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     const chosenAction = forcePrompt ? "prompt" : getDefaultDownloadAction();
     const finalAction: DownloadAction | undefined =
-      chosenAction === "prompt" ? await showDownloadActionPanel(url, getNamedFolderName(currentFileName)) : chosenAction;
+      chosenAction === "prompt" ? await showDownloadActionPanel(context, url, getNamedFolderName(currentFileName)) : chosenAction;
 
     try {
       if (!finalAction) {
@@ -254,13 +254,18 @@ function safeJoin(root: string, entryName: string): string {
   return dest;
 }
 
-async function showDownloadActionPanel(url: string, folderName: string): Promise<DownloadAction | undefined> {
+async function showDownloadActionPanel(
+  context: vscode.ExtensionContext,
+  url: string,
+  folderName: string
+): Promise<DownloadAction | undefined> {
   const panel = vscode.window.createWebviewPanel(
     "genbusappDownloadOptions",
     "GenBusApp Download Options",
     vscode.ViewColumn.Active,
     { enableScripts: true }
   );
+  panel.iconPath = vscode.Uri.file(path.join(context.extensionPath, "images", "icon.png"));
 
   panel.webview.html = getWebviewHtml(url, folderName);
 
@@ -569,4 +574,3 @@ async function downloadAndExtractZipIntoNamedFolder(zipUrl: string, folderName?:
 }
 
 // #endregion
-
