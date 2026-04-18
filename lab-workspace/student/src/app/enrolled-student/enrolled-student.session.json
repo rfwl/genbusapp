@@ -1,0 +1,520 @@
+{
+  "parsedRawJsonObject": {
+    "Code": 10176,
+    "Title": "Ms",
+    "FirstName": "Jeremi",
+    "LastName": "Harris",
+    "DOB": "2010-11-25",
+    "Gender": "F",
+    "Active": true,
+    "Address": {
+      "AddressLine1": "Legal House",
+      "AddressLine2": "123 Floradel Street, Chippendale",
+      "Suburb": "Tenlipu",
+      "State": "ABC",
+      "Postcode": "1234",
+      "Country": "ABC",
+      "j2codeConfig": {
+        "multiWordsName": "student, address, record"
+      }
+    },
+    "Contact": {
+      "Mobile": "012345678",
+      "Phone": "12345678",
+      "Email": "abcdef@abcdef.com",
+      "Web": "abcdef.com"
+    },
+    "j2codeConfig": {
+      "multiWordsName": "enrolled, student"
+    }
+  },
+  "rootJDF": {
+    "id": "",
+    "icon": "",
+    "tooltip": "",
+    "display": "",
+    "dataTypeId": "",
+    "field": "rootLevelObject",
+    "children": [
+      {
+        "id": "",
+        "icon": "",
+        "tooltip": "",
+        "display": "",
+        "dataTypeId": "",
+        "field": "Code",
+        "children": [],
+        "index": 2,
+        "level": 1,
+        "fieldType": "Number",
+        "dataType": {
+          "code": "Number",
+          "tsDataType": "number",
+          "htmlInputType": "number",
+          "defaultValue": "null",
+          "sortable": true
+        },
+        "dataTypeCode": "Number",
+        "multipleWordsName": "Code",
+        "_fieldObjectPath": [],
+        "_fieldNamePath": [],
+        "subEntityList_NoDuplicates": []
+      },
+      {
+        "id": "",
+        "icon": "",
+        "tooltip": "",
+        "display": "",
+        "dataTypeId": "",
+        "field": "Title",
+        "children": [],
+        "index": 3,
+        "level": 1,
+        "fieldType": "String",
+        "dataType": {
+          "code": "String",
+          "tsDataType": "string",
+          "htmlInputType": "text",
+          "defaultValue": "null",
+          "sortable": true
+        },
+        "dataTypeCode": "String",
+        "multipleWordsName": "Title",
+        "_fieldObjectPath": [],
+        "_fieldNamePath": [],
+        "subEntityList_NoDuplicates": []
+      },
+      {
+        "id": "",
+        "icon": "",
+        "tooltip": "",
+        "display": "",
+        "dataTypeId": "",
+        "field": "FirstName",
+        "children": [],
+        "index": 4,
+        "level": 1,
+        "fieldType": "String",
+        "dataType": {
+          "code": "String",
+          "tsDataType": "string",
+          "htmlInputType": "text",
+          "defaultValue": "null",
+          "sortable": true
+        },
+        "dataTypeCode": "String",
+        "multipleWordsName": "FirstName",
+        "_fieldObjectPath": [],
+        "_fieldNamePath": [],
+        "subEntityList_NoDuplicates": []
+      },
+      {
+        "id": "",
+        "icon": "",
+        "tooltip": "",
+        "display": "",
+        "dataTypeId": "",
+        "field": "LastName",
+        "children": [],
+        "index": 5,
+        "level": 1,
+        "fieldType": "String",
+        "dataType": {
+          "code": "String",
+          "tsDataType": "string",
+          "htmlInputType": "text",
+          "defaultValue": "null",
+          "sortable": true
+        },
+        "dataTypeCode": "String",
+        "multipleWordsName": "LastName",
+        "_fieldObjectPath": [],
+        "_fieldNamePath": [],
+        "subEntityList_NoDuplicates": []
+      },
+      {
+        "id": "",
+        "icon": "",
+        "tooltip": "",
+        "display": "",
+        "dataTypeId": "",
+        "field": "DOB",
+        "children": [],
+        "index": 6,
+        "level": 1,
+        "fieldType": "Date",
+        "dataType": {
+          "code": "Date",
+          "tsDataType": "string",
+          "htmlInputType": "date",
+          "defaultValue": "null",
+          "sortable": true
+        },
+        "dataTypeCode": "Date",
+        "multipleWordsName": "DOB",
+        "_fieldObjectPath": [],
+        "_fieldNamePath": [],
+        "subEntityList_NoDuplicates": []
+      },
+      {
+        "id": "",
+        "icon": "",
+        "tooltip": "",
+        "display": "",
+        "dataTypeId": "",
+        "field": "Gender",
+        "children": [],
+        "index": 7,
+        "level": 1,
+        "fieldType": "String",
+        "dataType": {
+          "code": "String",
+          "tsDataType": "string",
+          "htmlInputType": "text",
+          "defaultValue": "null",
+          "sortable": true
+        },
+        "dataTypeCode": "String",
+        "multipleWordsName": "Gender",
+        "_fieldObjectPath": [],
+        "_fieldNamePath": [],
+        "subEntityList_NoDuplicates": []
+      },
+      {
+        "id": "",
+        "icon": "",
+        "tooltip": "",
+        "display": "",
+        "dataTypeId": "",
+        "field": "Active",
+        "children": [],
+        "index": 8,
+        "level": 1,
+        "fieldType": "Boolean",
+        "dataType": {
+          "code": "Boolean",
+          "tsDataType": "boolean",
+          "htmlInputType": "checkbox",
+          "defaultValue": "false",
+          "sortable": true
+        },
+        "dataTypeCode": "Boolean",
+        "multipleWordsName": "Active",
+        "_fieldObjectPath": [],
+        "_fieldNamePath": [],
+        "subEntityList_NoDuplicates": []
+      },
+      {
+        "id": "",
+        "icon": "",
+        "tooltip": "",
+        "display": "",
+        "dataTypeId": "",
+        "field": "Address",
+        "children": [
+          {
+            "id": "",
+            "icon": "",
+            "tooltip": "",
+            "display": "",
+            "dataTypeId": "",
+            "field": "AddressLine1",
+            "children": [],
+            "index": 10,
+            "level": 2,
+            "fieldType": "String",
+            "dataType": {
+              "code": "String",
+              "tsDataType": "string",
+              "htmlInputType": "text",
+              "defaultValue": "null",
+              "sortable": true
+            },
+            "dataTypeCode": "String",
+            "multipleWordsName": "AddressLine1",
+            "_fieldObjectPath": [],
+            "_fieldNamePath": [],
+            "subEntityList_NoDuplicates": []
+          },
+          {
+            "id": "",
+            "icon": "",
+            "tooltip": "",
+            "display": "",
+            "dataTypeId": "",
+            "field": "AddressLine2",
+            "children": [],
+            "index": 11,
+            "level": 2,
+            "fieldType": "String",
+            "dataType": {
+              "code": "String",
+              "tsDataType": "string",
+              "htmlInputType": "text",
+              "defaultValue": "null",
+              "sortable": true
+            },
+            "dataTypeCode": "String",
+            "multipleWordsName": "AddressLine2",
+            "_fieldObjectPath": [],
+            "_fieldNamePath": [],
+            "subEntityList_NoDuplicates": []
+          },
+          {
+            "id": "",
+            "icon": "",
+            "tooltip": "",
+            "display": "",
+            "dataTypeId": "",
+            "field": "Suburb",
+            "children": [],
+            "index": 12,
+            "level": 2,
+            "fieldType": "String",
+            "dataType": {
+              "code": "String",
+              "tsDataType": "string",
+              "htmlInputType": "text",
+              "defaultValue": "null",
+              "sortable": true
+            },
+            "dataTypeCode": "String",
+            "multipleWordsName": "Suburb",
+            "_fieldObjectPath": [],
+            "_fieldNamePath": [],
+            "subEntityList_NoDuplicates": []
+          },
+          {
+            "id": "",
+            "icon": "",
+            "tooltip": "",
+            "display": "",
+            "dataTypeId": "",
+            "field": "State",
+            "children": [],
+            "index": 13,
+            "level": 2,
+            "fieldType": "String",
+            "dataType": {
+              "code": "String",
+              "tsDataType": "string",
+              "htmlInputType": "text",
+              "defaultValue": "null",
+              "sortable": true
+            },
+            "dataTypeCode": "String",
+            "multipleWordsName": "State",
+            "_fieldObjectPath": [],
+            "_fieldNamePath": [],
+            "subEntityList_NoDuplicates": []
+          },
+          {
+            "id": "",
+            "icon": "",
+            "tooltip": "",
+            "display": "",
+            "dataTypeId": "",
+            "field": "Postcode",
+            "children": [],
+            "index": 14,
+            "level": 2,
+            "fieldType": "String",
+            "dataType": {
+              "code": "String",
+              "tsDataType": "string",
+              "htmlInputType": "text",
+              "defaultValue": "null",
+              "sortable": true
+            },
+            "dataTypeCode": "String",
+            "multipleWordsName": "Postcode",
+            "_fieldObjectPath": [],
+            "_fieldNamePath": [],
+            "subEntityList_NoDuplicates": []
+          },
+          {
+            "id": "",
+            "icon": "",
+            "tooltip": "",
+            "display": "",
+            "dataTypeId": "",
+            "field": "Country",
+            "children": [],
+            "index": 15,
+            "level": 2,
+            "fieldType": "String",
+            "dataType": {
+              "code": "String",
+              "tsDataType": "string",
+              "htmlInputType": "text",
+              "defaultValue": "null",
+              "sortable": true
+            },
+            "dataTypeCode": "String",
+            "multipleWordsName": "Country",
+            "_fieldObjectPath": [],
+            "_fieldNamePath": [],
+            "subEntityList_NoDuplicates": []
+          }
+        ],
+        "index": 9,
+        "level": 1,
+        "fieldType": "Object",
+        "dataType": {
+          "code": "Object",
+          "tsDataType": "any",
+          "htmlInputType": "text",
+          "defaultValue": "null",
+          "sortable": false
+        },
+        "dataTypeCode": "Object",
+        "configFieldObject": {
+          "multiWordsName": "student, address, record"
+        },
+        "multipleWordsName": "student, address, record",
+        "_fieldObjectPath": [],
+        "_fieldNamePath": [],
+        "subEntityList_NoDuplicates": []
+      },
+      {
+        "id": "",
+        "icon": "",
+        "tooltip": "",
+        "display": "",
+        "dataTypeId": "",
+        "field": "Contact",
+        "children": [
+          {
+            "id": "",
+            "icon": "",
+            "tooltip": "",
+            "display": "",
+            "dataTypeId": "",
+            "field": "Mobile",
+            "children": [],
+            "index": 17,
+            "level": 2,
+            "fieldType": "String",
+            "dataType": {
+              "code": "String",
+              "tsDataType": "string",
+              "htmlInputType": "text",
+              "defaultValue": "null",
+              "sortable": true
+            },
+            "dataTypeCode": "String",
+            "multipleWordsName": "Mobile",
+            "_fieldObjectPath": [],
+            "_fieldNamePath": [],
+            "subEntityList_NoDuplicates": []
+          },
+          {
+            "id": "",
+            "icon": "",
+            "tooltip": "",
+            "display": "",
+            "dataTypeId": "",
+            "field": "Phone",
+            "children": [],
+            "index": 18,
+            "level": 2,
+            "fieldType": "String",
+            "dataType": {
+              "code": "String",
+              "tsDataType": "string",
+              "htmlInputType": "text",
+              "defaultValue": "null",
+              "sortable": true
+            },
+            "dataTypeCode": "String",
+            "multipleWordsName": "Phone",
+            "_fieldObjectPath": [],
+            "_fieldNamePath": [],
+            "subEntityList_NoDuplicates": []
+          },
+          {
+            "id": "",
+            "icon": "",
+            "tooltip": "",
+            "display": "",
+            "dataTypeId": "",
+            "field": "Email",
+            "children": [],
+            "index": 19,
+            "level": 2,
+            "fieldType": "Email",
+            "dataType": {
+              "code": "Email",
+              "tsDataType": "string",
+              "htmlInputType": "email",
+              "defaultValue": "null",
+              "sortable": true
+            },
+            "dataTypeCode": "Email",
+            "multipleWordsName": "Email",
+            "_fieldObjectPath": [],
+            "_fieldNamePath": [],
+            "subEntityList_NoDuplicates": []
+          },
+          {
+            "id": "",
+            "icon": "",
+            "tooltip": "",
+            "display": "",
+            "dataTypeId": "",
+            "field": "Web",
+            "children": [],
+            "index": 20,
+            "level": 2,
+            "fieldType": "String",
+            "dataType": {
+              "code": "String",
+              "tsDataType": "string",
+              "htmlInputType": "text",
+              "defaultValue": "null",
+              "sortable": true
+            },
+            "dataTypeCode": "String",
+            "multipleWordsName": "Web",
+            "_fieldObjectPath": [],
+            "_fieldNamePath": [],
+            "subEntityList_NoDuplicates": []
+          }
+        ],
+        "index": 16,
+        "level": 1,
+        "fieldType": "Object",
+        "dataType": {
+          "code": "Object",
+          "tsDataType": "any",
+          "htmlInputType": "text",
+          "defaultValue": "null",
+          "sortable": false
+        },
+        "dataTypeCode": "Object",
+        "multipleWordsName": "Contact",
+        "_fieldObjectPath": [],
+        "_fieldNamePath": [],
+        "subEntityList_NoDuplicates": []
+      }
+    ],
+    "index": 0,
+    "level": 0,
+    "fieldType": "Object",
+    "dataType": {
+      "code": "Object",
+      "tsDataType": "any",
+      "htmlInputType": "text",
+      "defaultValue": "null",
+      "sortable": false
+    },
+    "dataTypeCode": "Object",
+    "configFieldObject": {
+      "multiWordsName": "enrolled, student"
+    },
+    "multipleWordsName": "enrolled, student",
+    "_fieldObjectPath": [],
+    "_fieldNamePath": [],
+    "subEntityList_NoDuplicates": []
+  }
+}
