@@ -1,0 +1,37 @@
+{
+  "name": "mcp-j2code-reactnextjs-mongodb",
+  "version": "1.0.0",
+  "description": "MCP server for generating production-ready React/Next.js MongoDB business applications from JSON schemas",
+  "author": "GenBusApp",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "generate:icon": "node scripts/generate-extension-icon.mjs",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "code-generation",
+    "react",
+    "nextjs",
+    "mongodb",
+    "business-app",
+    "j2code"
+  ]
+}

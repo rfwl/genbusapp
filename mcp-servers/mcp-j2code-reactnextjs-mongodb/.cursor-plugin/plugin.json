@@ -1,0 +1,43 @@
+{
+  "id": "mcp-j2code-reactnextjs-mongodb",
+  "name": "mcp-j2code-reactnextjs-mongodb",
+  "version": "1.0.0",
+  "description": "Generate production-ready React/Next.js MongoDB business applications from sample JSON business data using the J2Code API.",
+  "author": "GenBusApp",
+  "license": "MIT",
+  "type": "mcp",
+  "homepage": "https://github.com/rfwl/genbusapp/tree/main/mcp-servers/mcp-j2code-reactnextjs-mongodb",
+  "repository": "https://github.com/rfwl/genbusapp",
+  "mcp": {
+    "type": "stdio",
+    "command": "node",
+    "args": ["./dist/index.js"],
+    "env": {
+      "J2CODE_API_URL": "https://www.j2code.app/api/j2code/reactnextjs-mongodb"
+    }
+  },
+  "features": [
+    "Generate React/Next.js MongoDB applications from sample JSON data",
+    "Download generated source code",
+    "Extract generated code to workspace"
+  ],
+  "tags": [
+    "react",
+    "nextjs",
+    "mongodb",
+    "code-generation",
+    "business-app",
+    "full-stack"
+  ],
+  "marketplaceMetadata": {
+    "category": "Code Generation",
+    "subcategory": "Full Stack",
+    "icon": "extension-icon.png",
+    "displayName": "J2Code React Next.js MongoDB",
+    "summary": "Generate full-stack React + Next.js + MongoDB business applications from sample JSON data",
+    "documentation": "https://github.com/rfwl/genbusapp/blob/main/mcp-servers/mcp-j2code-reactnextjs-mongodb/README.md",
+    "repository": "https://github.com/rfwl/genbusapp",
+    "bugs": "https://github.com/rfwl/genbusapp/issues",
+    "verified": false
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "mcp-j2code-angular-firestore",
+  "name": "J2Code Angular Firestore",
+  "version": "1.0.0",
+  "description": "Generate production-ready Angular Firestore business applications from sample JSON business data using the J2Code API.",
+  "author": "GenBusApp",
+  "license": "MIT",
+  "type": "mcp",
+  "mcp": {
+    "type": "stdio",
+    "command": "node",
+    "args": ["./src/index.ts"],
+    "env": {
+      "J2CODE_API_URL": "https://www.j2code.app/api/j2code/angular-firestore"
+    }
+  },
+  "features": [
+    "Generate Angular Firestore applications from sample JSON data",
+    "Download generated source code",
+    "Extract generated code to workspace"
+  ],
+  "tags": [
+    "angular",
+    "firestore",
+    "firebase",
+    "code-generation",
+    "business-app"
+  ],
+  "marketplaceMetadata": {
+    "category": "Code Generation",
+    "subcategory": "Backend",
+    "icon": "extension-icon.png",
+    "displayName": "J2Code Angular Firestore Generator",
+    "summary": "Generate full-stack Angular + Firestore business applications from sample JSON data",
+    "documentation": "https://github.com/your-repo/mcp-j2code-angular-firestore/blob/main/README.md",
+    "repository": "https://github.com/your-repo/mcp-j2code-angular-firestore",
+    "bugs": "https://github.com/your-repo/mcp-j2code-angular-firestore/issues",
+    "ratings": 4.5,
+    "downloads": 0,
+    "verified": false
+  }
+}

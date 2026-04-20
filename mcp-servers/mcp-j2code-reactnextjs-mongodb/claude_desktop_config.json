@@ -1,0 +1,78 @@
+# Configuration Example for Claude Desktop
+
+Copy and paste this into your `claude_desktop_config.json` file located in:
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+- Linux: `~/.config/Claude/claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "j2code-reactnextjs-mongodb": {
+      "command": "npx",
+      "args": ["mcp-j2code-reactnextjs-mongodb@latest"],
+      "env": {
+        "J2CODE_API_URL": "https://www.j2code.app/api/j2code/reactnextjs-mongodb"
+      }
+    }
+  }
+}
+```
+
+## Environment Variables
+
+- `J2CODE_API_URL`: (Optional) Override the default J2Code API endpoint
+  - Default: `https://www.j2code.app/api/j2code/reactnextjs-mongodb`
+  - Use this to point to a custom API server if needed
+
+## Usage in Claude
+
+After configuration, you can ask Claude to:
+
+1. **Generate React/NextJS MongoDB apps:**
+   ```
+   Generate a React/NextJS MongoDB app from this JSON schema:
+   {"id": "string", "name": "string", "email": "string"}
+   ```
+
+2. **Download generated code:**
+   ```
+   Download the generated code from this URL: https://...
+   ```
+
+3. **Extract code to my workspace:**
+   ```
+   Extract the generated ZIP to my projects folder
+   ```
+
+## Troubleshooting
+
+### Server not connecting
+1. Ensure Node.js 18+ is installed: `node --version`
+2. Try installing the package globally:
+   ```bash
+   npm install -g mcp-j2code-reactnextjs-mongodb
+   ```
+3. Restart Claude
+
+### API errors
+1. Check your internet connection
+2. Verify the API URL is correct
+3. Ensure your JSON schema is valid
+
+### File extraction issues
+1. Verify the ZIP file exists and is readable
+2. Ensure the target directory has write permissions
+3. Check available disk space
+
+## For Developers
+
+To test the MCP server locally:
+
+```bash
+npm install
+npm run build
+npm start
+```
+
+The server will start and accept MCP protocol requests over stdio.

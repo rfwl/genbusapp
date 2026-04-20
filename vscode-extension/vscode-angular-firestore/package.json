@@ -3,7 +3,7 @@
   "displayName": "GenBusApp Angular Firestore App Generator",
   "description": "Generate production-ready business apps maintaining business record lists simply from a JSON sample business record inside VS Code instantly",
   "version": "1.0.10",
-  "publisher": "genbusapp",
+  "publisher": "GenBusApp",
   "repository": {
     "type": "git",
     "url": "https://github.com/rfwl/genbusapp/"
