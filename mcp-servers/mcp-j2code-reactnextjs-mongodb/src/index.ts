@@ -4,7 +4,7 @@ import {
   ListToolsRequestSchema,
   CallToolRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
-import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 //#endregion
 
@@ -295,7 +295,7 @@ async function extractZip(
 
 async function runServer() {
   // Initialize server
-  const server = new Server(
+  const server = new McpServer(
     {
       name: "mcp-j2code-reactnextjs-mongodb",
       version: "1.0.0",
@@ -310,7 +310,7 @@ async function runServer() {
   );
 
   // List tools handler
-  server.setRequestHandler(ListToolsRequestSchema, () => ({
+  server.server.setRequestHandler(ListToolsRequestSchema, () => ({
     tools: TOOLS.map((tool) => ({
       name: tool.name,
       description: tool.description,
@@ -319,7 +319,7 @@ async function runServer() {
   }));
 
   // Call tool handler
-  server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  server.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const toolName = request.params.name;
       const args = (request.params.arguments ?? {}) as ToolInput;
 

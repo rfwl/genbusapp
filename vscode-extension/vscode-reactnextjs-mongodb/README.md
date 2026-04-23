@@ -6,17 +6,23 @@
 [![VS Code](https://img.shields.io/badge/VS%20Code-1.88.0+-2563eb.svg)](https://code.visualstudio.com/)
 [![License](https://img.shields.io/badge/license-MIT-16a34a.svg)](LICENSE)
 
-Turn valid JSON - only a sample business record, not JSON schema - into a generated React/Next.js + MongoDB business application - complete set of source code files - without leaving VS Code.
+Take a sample JSON business record and instantly generates a complete, functional React NextJS web application for managing the business record list in a MongoB Atlas database. 
 
-It is built for developers who want a faster path from sample data to a primarily production-ready application. Open a JSON document, run the command, and choose whether to open the download URL, copy it, or extract the generated project directly into your workspace.
+The generated .zip file includes all necessary source code files: client components, pages, routes, API end-points, and utilities, ready to use out of the box. The sample JSON business record can have nested objects and arrays at any depth. Editor forms and grid views will be generated for them. This allows you to seamlessly perform all CRUD operations (Create, Read, Update, Delete) on both root and child records.
+
+<mark>No LLM or AI Tools Used - Traditional way to generate fully verified, production-ready source code files!</mark>
+
+## Features
+- A couple kilobytes of a JSON string instantly generates hundreds kilobytes of source codes.
+- Not only for the root level object, UI Components, like grid view and editor form, will be generated for unlimitedly-deep child objects and arrays.
+- After generated, all these components will work perfectly without modifications.
+- Majority of coding activities of a business application is for maintaining business record lists in a database. GenBusApp has AUTOMATED such activities. 
 
 ## Why Developers Use It
-
-- Generate the whole React NextJS project from the JSON string already open in your editor
-- Stay inside VS Code instead of switching between browser tools and local folders
-- Extract generated code straight into the current workspace for immediate inspection
-- Keep control over API endpoints and download behavior through settings
-- Avoid noisy activation because commands only appear when the active file contains valid JSON
+- No need to talk to AI model and just open a JSON document, run the command.
+- You can choose whether to open the download URL, copy it, or extract the generated project directly into your workspace.
+- Immediately run the generated web application without leaving VS Code.
+- Generated codes are fully workable without any modification.
 
 ## Tutorial 
 
